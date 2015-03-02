@@ -1,0 +1,54 @@
+<h1 class="text-center">Devices</h1>
+
+<div class="row main-margin-top">
+    <div class="col-sm-1 col-sm-offset-1">
+      Name
+    </div>
+    <div class="col-sm-1 col-sm-offset-1">
+      Short Name
+    </div>
+    <div class="col-sm-1 col-sm-offset-1">
+      Description
+    </div>
+    <div class="col-sm-1 col-sm-offset-1">
+      Room
+    </div>
+    <div class="col-sm-3 col-sm-offset-1">
+      
+    </div>   
+  </div>    
+<% @devices.each do |d| %>
+<hr/>
+    <div class="row">
+      <div class="col-sm-1 col-sm-offset-1">
+        <%= d.name %>
+      </div>
+      <div class="col-sm-1 col-sm-offset-1">
+        <%= d.short_name %>
+      </div>
+      <div class="col-sm-1 col-sm-offset-1">
+        <%= d.description %>
+      </div>
+      <div class="col-sm-1 col-sm-offset-1">
+        <%= d.room.name %>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <div class="col-sm-2">
+          <%= link_to 'Edit', edit_room_path(d) %> 
+        </div>
+        <div class="col-sm-2">
+          <%= link_to 'Delete', d, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>      
+      </div>   
+    </div>    
+  <hr/>
+<% end %>
+<div class="row">
+  <div class="col-sm-1 col-sm-offset-1">
+    <%= link_to 'Add', new_device_path, class: "btn btn-large btn-primary" %> 
+  </div>
+</div>
+
+
+
+

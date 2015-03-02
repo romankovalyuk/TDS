@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span4 offset4 ">
+    <%= form_for(@device) do |d| %>      
+      <%= d.label :name %>
+      <%= d.text_field :name %>    
+
+      <%= d.label :short_name %>
+      <%= d.text_field :short_name %>    
+
+      <%= d.label :description %>
+      <%= d.text_field :description %>  
+
+      <%= d.label :room %>
+      <%= d.collection_select(:room_id, Room.all, :id, :name) %>
+
+      <%= d.submit "Add", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
