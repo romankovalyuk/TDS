@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150302170016) do
   create_table "dashboards", force: true do |t|
     t.integer  "user_id"
     t.integer  "device_id"
+    t.integer  "room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

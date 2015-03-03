@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :devices_location
+	has_many :dashboards
 	
   	validates_uniqueness_of :uid, :scope => :provider
 end

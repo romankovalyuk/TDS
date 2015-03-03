@@ -16,7 +16,7 @@ class Auth0Controller < ApplicationController
 
     if user.save
       session[:user_id] = user.id 
-      redirect_to '/dashboard'
+      redirect_to dashboards_path
     else
       "Failed to login"
     end

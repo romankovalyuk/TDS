@@ -1,6 +1,5 @@
 class Device < ActiveRecord::Base
-	belongs_to :room
-	has_many :dashboard
+	has_many :dashboards
 
-	validates :room_id, presence: true 	
+	validates :name, presence: true 	
 end

@@ -20,14 +20,19 @@
 <% @devices_location.each do |dl| %>
 <hr/>
     <div class="row">
-      <div class="col-sm-1 col-sm-offset-1">
-        <%= dl.user.name %>
+      <div class="col-sm-1 col-sm-offset-1 no-left-padding">
+        <div class="col-sm-6">
+          <img class="board-ava" src="<%= dl.user.image %>"/>
+        </div>
+        <div class="col-sm-6" >
+          <%= dl.user.name %>
+        </div>        
       </div>
       <div class="col-sm-1 col-sm-offset-1">
         <%= dl.device.name %>
       </div>
       <div class="col-sm-1 col-sm-offset-1">
-        <%= dl.device.room.name %>
+        <%= dl.room.name %>
       </div>
       <div class="col-sm-1 col-sm-offset-1">
         <%= dl.updated_at %>

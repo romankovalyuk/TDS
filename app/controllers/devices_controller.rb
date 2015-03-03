@@ -44,6 +44,6 @@ class DevicesController < SecuredController
 
 	private 
 		def device_params
-      		params.require(:device).permit(:name, :short_name, :description, :room_id)
+      		params.require(:device).permit(:name, :short_name, :description)
    		 end
 end
