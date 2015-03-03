@@ -4,7 +4,6 @@ class CreateDevices < ActiveRecord::Migration
     	t.string :name
     	t.string :short_name
     	t.string :description
-    	t.integer :room_id
 
     	t.timestamps
     end
