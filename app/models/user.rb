@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :dashboards
+	has_many :dashboards, :dependent => :destroy
 	
   	validates_uniqueness_of :uid, :scope => :provider
 end

@@ -1,4 +1,7 @@
-<h2>Update room</h2>
+<div class="row">
+  <h3 class="col-sm-4 col-sm-offset-1 " >Update room </h3>
+</div>
+
 
 <div class="row">
   <div class="span4 offset4">
@@ -6,7 +9,12 @@
       <%= r.label :name %>
       <%= r.text_field :name %>
 
-      <%= r.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <div class="row margin-top">
+	        <div class="col-sm-9 text-center">
+	          <%= r.submit "Save", class: "btn btn-md btn-primary" %>
+	          <%= link_to 'Back', rooms_path, class: "btn btn-md btn-primary" %>
+	        </div>        
+      </div>      
     <% end %>
   </div>
 </div>

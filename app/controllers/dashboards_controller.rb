@@ -6,18 +6,20 @@ class DashboardsController < SecuredController
   end
 
   def index
-  	@devices_location = Dashboard.all
+    @q = Dashboard.ransack(params[:q])
+    @dashboards = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
+
   end
 
   def new
-  	@devices_location = Dashboard.new
+  	@dashboards = Dashboard.new
   end
 
   def create
     par = dashboard_params
     par[:user_id] = current_user.id
-  	@devices_location = Dashboard.new(par)
-  	if @devices_location.save
+  	@dashboards = Dashboard.new(par)
+  	if @dashboards.save
        	flash[:success] = "Added successfully."
       	redirect_to dashboards_path
     else
@@ -26,7 +28,19 @@ class DashboardsController < SecuredController
   end
 
   def edit
-  		
+  	@dashboard = Dashboard.find(params[:id])
+  end
+
+  def update    
+    par = dashboard_params
+    par[:user_id] = current_user.id
+    @dashboaedr = Dashboard.find(params[:id])
+    if @dashboaedr.update_attributes(par)
+      flash[:success] = "Updated"
+      redirect_to dashboards_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy	

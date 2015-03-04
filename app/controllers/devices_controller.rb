@@ -1,6 +1,7 @@
 class DevicesController < SecuredController
 	def index
-		@devices = Device.all
+		@q = Device.ransack(params[:q])
+    	@devices = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
 	end
 
 	def show
@@ -29,7 +30,7 @@ class DevicesController < SecuredController
 		@device = Device.find(params[:id])
 	    if @device.update_attributes(room_params)
 	      flash[:success] = "Device updated"
-	      redirect_to rooms_path
+	      redirect_to devices_path
 	    else
 	      render 'edit'
 	    end
@@ -39,7 +40,7 @@ class DevicesController < SecuredController
 	    @device = Device.find(params[:id])
 	    @device.destroy
 	    flash[:success] = "User deleted."
-	    redirect_to rooms_path
+	    redirect_to devices_path
     end
 
 	private 

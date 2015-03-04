@@ -14,11 +14,16 @@
         <%= user.email %>
       </div>
     </div>
-    <%= link_to 'Delete', "user", method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% if user.id == current_user.id %>    
+        <%= link_to 'Delete', "user", method: :delete, data: { confirm: 'Are you sure?' } %>
+     <% end %>
   </div>
   <hr/>
 <% end %>
 
 
-
-
+<div class="row">
+  <div class="col-sm-11">
+    <%= will_paginate %>
+  </div>     
+</div>

@@ -188,10 +188,32 @@ pre {
   margin: 0;
 }
 
-.main-margin-top{
-  margin-top: 70px;
-}
-
 .no-left-padding{
   padding-left: 0;
+}
+
+.search{
+  margin-bottom: 10px;
+}
+
+.header{
+  margin-top: 40px;
+  div{
+    font-family: monospace;
+  font-size: 15px;
+  }
+}
+
+.no-decoration{
+  text-decoration: blink !important
+}
+
+.form{
+  input{
+    min-height: 30px;
+  }
+}
+
+.margin-top{
+  margin-top: 20px;
 }

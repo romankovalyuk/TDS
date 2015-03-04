@@ -1,7 +1,8 @@
 
 <div class="row">
-  <h3 class="col-sm-4 col-sm-offset-1 " >Create device </h3>
+  <h3 class="col-sm-4 col-sm-offset-1 " >Update device </h3>
 </div>
+
 <div class="row">
   <div class="span4 offset4 form">
     <%= form_for(@device) do |d| %>      
@@ -16,7 +17,7 @@
 
       <div class="row margin-top">
         <div class="col-sm-9 text-center">
-          <%= d.submit "Add", class: "btn btn-md btn-primary" %>
+          <%= d.submit "Save", class: "btn btn-md btn-primary" %>
           <%= link_to 'Back', devices_path, class: "btn btn-md btn-primary" %>
         </div>        
       </div>      

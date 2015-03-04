@@ -1,7 +1,8 @@
 class RoomsController < SecuredController
 	
 	def index
-		@rooms = Room.all
+		@q = Room.ransack(params[:q])
+    	@rooms = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
 	end
 
 	def show

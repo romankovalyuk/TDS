@@ -1,6 +1,19 @@
-<h1 class="text-center">Devices</h1>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-1">
+    <h2 class="text-left no-margin">Devices</h2>
+  </div>  
+  <div class="col-sm-3">
+      <%= search_form_for @q do |f| %>
 
-<div class="row main-margin-top">
+        <%= f.label :search %>
+        <%= f.search_field :name_or_short_name_cont %>
+
+        <%= f.submit class: "btn-primary search" %>
+      <% end %>
+  </div>  
+</div>
+
+<div class="row header">
     <div class="col-sm-1 col-sm-offset-1">
       Name
     </div>
@@ -15,7 +28,7 @@
     </div>   
   </div>    
 <% @devices.each do |d| %>
-<hr/>
+  <hr/>
     <div class="row">
       <div class="col-sm-1 col-sm-offset-1">
         <%= d.name %>
@@ -28,7 +41,7 @@
       </div>
       <div class="col-sm-3 col-sm-offset-1">
         <div class="col-sm-2">
-          <%= link_to 'Edit', edit_room_path(d) %> 
+          <%= link_to 'Edit', edit_device_path(d) %> 
         </div>
         <div class="col-sm-2">
           <%= link_to 'Delete', d, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -39,7 +52,10 @@
 <% end %>
 <div class="row">
   <div class="col-sm-1 col-sm-offset-1">
-    <%= link_to 'Add', new_device_path, class: "btn btn-large btn-primary" %> 
+    <%= link_to 'Add', new_device_path, class: "btn btn-md btn-primary" %> 
+  </div>
+  <div class="col-sm-9 text-right">
+     <%= will_paginate %>
   </div>
 </div>
 

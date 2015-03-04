@@ -1,6 +1,10 @@
+
+<div class="row">
+  <h3 class="col-sm-4 col-sm-offset-1 " >Create new request </h3>
+</div>
 <div class="row">
   <div class="span4 offset4 ">
-    <%= form_for @devices_location do |dl| %>      
+    <%= form_for @dashboards do |dl| %>      
 
       <%= dl.label :device_id %>
       <%= dl.collection_select(:device_id, Device.all, :id, :name) %>
@@ -8,8 +12,12 @@
       <%= dl.label :room_id %>
       <%= dl.collection_select(:room_id, Room.all, :id, :name) %>
 
-      <%= dl.submit "Add", class: "btn btn-large btn-primary" %>
-      <%= link_to 'Back', dashboards_path, class: "btn btn-large btn-primary" %>
+      <div class="row margin-top">
+        <div class="col-sm-9 text-center">
+          <%= dl.submit "Add", class: "btn btn-md btn-primary" %>
+          <%= link_to 'Back', dashboards_path, class: "btn btn-md btn-primary" %>
+        </div>        
+      </div>      
     <% end %>
   </div>
 </div>
