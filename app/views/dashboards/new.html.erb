@@ -5,12 +5,15 @@
 <div class="row">
   <div class="span4 offset4 ">
     <%= form_for @dashboards do |dl| %>      
-
-      <%= dl.label :device_id %>
-      <%= dl.collection_select(:device_id, Device.all, :id, :name) %>
-
-      <%= dl.label :room_id %>
-      <%= dl.collection_select(:room_id, Room.all, :id, :name) %>
+      <div class="row col-sm-offset-4">
+        <%= dl.label :device_id %>
+        <%= dl.collection_select(:device_id, Device.all, :id, :name) %>
+      </div>
+      
+      <div class="row col-sm-offset-4">
+        <%= dl.label :room_id %>
+        <%= dl.collection_select(:room_id, Room.all, :id, :name) %>
+      </div>      
 
       <div class="row margin-top">
         <div class="col-sm-9 text-center">

@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-sm-8 col-sm-offset-1">
+  <div class="col-sm-7 col-sm-offset-1">
     <h2 class="text-left no-margin">Devices</h2>
   </div>  
-  <div class="col-sm-3">
+  <div class="col-sm-4">
       <%= search_form_for @q do |f| %>
 
         <%= f.label :search %>
@@ -14,32 +14,32 @@
 </div>
 
 <div class="row header">
-    <div class="col-sm-1 col-sm-offset-1">
+    <div class="col-sm-2 col-sm-offset-1">
       Name
     </div>
-    <div class="col-sm-1 col-sm-offset-1">
+    <div class="col-sm-2">
       Short Name
     </div>
-    <div class="col-sm-1 col-sm-offset-1">
+    <div class="col-sm-4">
       Description
     </div>
-    <div class="col-sm-3 col-sm-offset-1">
+    <div class="col-sm-3">
       
     </div>   
   </div>    
 <% @devices.each do |d| %>
   <hr/>
     <div class="row">
-      <div class="col-sm-1 col-sm-offset-1">
+      <div class="col-sm-2 col-sm-offset-1">
         <%= d.name %>
       </div>
-      <div class="col-sm-1 col-sm-offset-1">
+      <div class="col-sm-2">
         <%= d.short_name %>
       </div>
-      <div class="col-sm-1 col-sm-offset-1">
+      <div class="col-sm-4">
         <%= d.description %>
       </div>
-      <div class="col-sm-3 col-sm-offset-1">
+      <div class="col-sm-3">
         <div class="col-sm-2">
           <%= link_to 'Edit', edit_device_path(d) %> 
         </div>
