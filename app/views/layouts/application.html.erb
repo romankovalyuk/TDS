@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= yield :cdn_code %>
 
-  <%= javascript_include_tag '//use.typekit.net/iws6ohy.js' %>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
