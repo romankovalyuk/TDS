@@ -7,9 +7,10 @@ gem 'bootstrap-sass', '3.2.0'
 gem 'autoprefixer-rails'
 
 gem 'bcrypt-ruby', '3.1.2'
-gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
+# gem 'will_paginate', '3.0.4'
+# gem 'bootstrap-will_paginate', '0.0.9'
 gem 'ransack'
+gem 'kaminari'
 
 #for Autorithation
 gem "pundit"
@@ -21,6 +22,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
 group :development, :test do
+  gem 'thin'
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
   gem 'pry'

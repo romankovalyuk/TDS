@@ -2,7 +2,7 @@ class RoomsController < SecuredController
 	
 	def index
 		@q = Room.ransack(params[:q])
-    	@rooms = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
+    	@rooms = @q.result(distinct: true).page params[:page]
 	end
 
 	def show
@@ -14,6 +14,9 @@ class RoomsController < SecuredController
     end
 
 	def create
+		p '!!!!!!!!!!!!!!!!!!!!!!1'
+		p room_params
+
 		@room = Room.new(room_params)
 		if @room.save
        		flash[:success] = "Added successfully."

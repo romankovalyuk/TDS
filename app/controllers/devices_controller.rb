@@ -1,7 +1,7 @@
 class DevicesController < SecuredController
 	def index
 		@q = Device.ransack(params[:q])
-    	@devices = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
+    	@devices = @q.result(distinct: true).page params[:page]
 	end
 
 	def show

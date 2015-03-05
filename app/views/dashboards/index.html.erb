@@ -72,7 +72,7 @@
     <%= link_to 'Add', new_dashboard_path, class: "btn btn-md btn-primary" %> 
   </div>
   <div class="col-sm-9 text-right">
-     <%= will_paginate %>
+     <%= paginate @dashboards %>
   </div>
 </div>
 

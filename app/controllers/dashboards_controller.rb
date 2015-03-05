@@ -7,7 +7,7 @@ class DashboardsController < SecuredController
 
   def index
     @q = Dashboard.ransack(params[:q])
-    @dashboards = @q.result(distinct: true).paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
+    @dashboards = @q.result(distinct: true).page params[:page]
 
   end
 

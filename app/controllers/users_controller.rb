@@ -2,7 +2,7 @@ class UsersController < SecuredController
 	include AuthHelper
 	
 	def index
-		@users = User.paginate(page: params[:page], per_page: ApplicationHelper::PAGES_PRE_COUNT)
+		@users = User.page params[:page]
 	end
 
 	def show

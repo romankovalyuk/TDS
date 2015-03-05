@@ -1,16 +1,17 @@
 <div class="row">
-  <div class="span4 offset4 ">
-    <%= form_for(@room) do |r| %>      
-      <%= r.label :name %>
-      <%= r.text_field :name %>     
-
+  <h3 class="col-sm-4 col-sm-offset-1 " >Create room </h3>
+</div>
+<div class="row col-sm-offset-1">
+    <%= form_for(@room) do |r| %>     
+      <div class="form-group">   
+        <%= r.label :name %>
+        <%= r.text_field :name, class: "form-control"  %>
+      </div>   
       <div class="row margin-top">
         <div class="col-sm-9 text-center">
           <%= r.submit "Add", class: "btn btn-md btn-primary" %>
           <%= link_to 'Back', rooms_path, class: "btn btn-md btn-primary" %>
         </div>        
-      </div>      
-      
+      </div>   
     <% end %>
-  </div>
 </div>
