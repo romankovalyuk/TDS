@@ -14,18 +14,17 @@ class Auth0Controller < ApplicationController
                   :image => auth["info"]["image"]
                 )
 
-    if user.save
-      session[:user_id] = user.id 
-      redirect_to dashboards_path
-    else
-      "Failed to login"
+  if user.save
+    session[:user_id] = user.id 
+    redirect_to dashboards_path
+  else
+    "Failed to login"
     end
   end
 
   def destroy
     session[:user_id] = nil
     redirect_to "/"
-
   end
 
   def failure

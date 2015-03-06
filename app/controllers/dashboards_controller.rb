@@ -8,7 +8,6 @@ class DashboardsController < SecuredController
   def index
     @q = Dashboard.ransack(params[:q])
     @dashboards = @q.result(distinct: true).page params[:page]
-
   end
 
   def new
@@ -44,16 +43,16 @@ class DashboardsController < SecuredController
   end
 
   def destroy	
-	    @dashboard = Dashboard.find(params[:id])
-	    @dashboard.destroy
-	    flash[:success] = "Deleted."
-	    redirect_to dashboards_path
-    end
+    @dashboard = Dashboard.find(params[:id])
+    @dashboard.destroy
+    flash[:success] = "Deleted."
+    redirect_to dashboards_path
+  end
 
 
   private 
 		def dashboard_params
-      		params.require(:dashboard).permit(:device_id, :room_id)
-   		 end
+      params.require(:dashboard).permit(:device_id, :room_id)
+    end
 end
 	
