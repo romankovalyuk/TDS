@@ -6,8 +6,8 @@ class DashboardsController < SecuredController
   end
 
   def index
-    @q = Dashboard.ransack(params[:q])
-    @dashboards = @q.result(distinct: true).page params[:page]
+    @q = Dashboard.includes(:user, :room, :device).ransack(params[:q])
+    @dashboards = @q.result(distinct: true).page(params[:page])
   end
 
   def new

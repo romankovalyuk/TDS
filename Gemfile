@@ -9,24 +9,24 @@ gem 'autoprefixer-rails'
 gem 'bcrypt-ruby', '3.1.2'
 # gem 'will_paginate', '3.0.4'
 # gem 'bootstrap-will_paginate', '0.0.9'
-gem 'ransack'
-gem 'kaminari'
+gem 'ransack', '1.6.3'
+gem 'kaminari', '0.16.3'
 
 #for Autorithation
-gem "pundit"
+gem "pundit", '0.3.0'
 
 gem 'omniauth', '~> 1.2'
 gem 'omniauth-auth0', '~> 1.1'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'devise'
+gem 'devise', '3.4.1'
 
 group :development, :test do
-  gem 'thin'
+  gem 'thin', '1.6.3'
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
-  gem 'pry'
-  gem 'spring'
+  gem 'pry', '0.10.1'
+  gem 'spring', '1.3.3'
   gem 'dotenv', '~> 0.11.1'
 end
 
