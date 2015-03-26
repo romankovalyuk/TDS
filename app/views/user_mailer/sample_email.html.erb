@@ -3,9 +3,11 @@
       <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     </head>
     <body>
-        <h1>Hi <%= @user.name %></h1>
+        <h3>
+          Hi, <%= @user.name %>
+        </h3>
         <p>
-          Sample mail sent using smtp.
-        </p>
+          Device <%= @device.name %> is available on room <%= @room.name %>, you can get it.
+        <p>
     </body>
 </html>

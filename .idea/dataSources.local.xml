@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails TDS: development" uuid="b901598f-0ee7-4127-b75b-85f1d7a2eb51">
+      <first-sync>true</first-sync>
+      <user-name>admin</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    </data-source>
+    <data-source name="Rails TDS: test" uuid="499dc2f7-f88d-4ac4-a5a8-4939dc7a8730">
+      <first-sync>true</first-sync>
+      <user-name>admin</user-name>
+      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
+    </data-source>
+    <data-source name="Rails TDS: production" uuid="48076f8f-4cde-4459-b8cf-c0140af96463">
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

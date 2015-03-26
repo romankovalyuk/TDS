@@ -29,6 +29,7 @@
   </div>   
   </div>
     <% @grouped_arts.each do |key, dashboards| %>
+        <% dashboards = dashboards.sort_by { |p| p[:created_at] } %>
         <% dashboards.each do |dl| %>
             <% user = User.find(dl.user_id) %>
             <% device = Device.find(dl.device_id) %>

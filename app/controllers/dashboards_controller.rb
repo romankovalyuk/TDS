@@ -21,7 +21,7 @@ class DashboardsController < SecuredController
     par[:user_id] = current_user.id
   	@dashboards = Dashboard.new(par)
   	if @dashboards.save
-       	flash[:success] = "Added successfully."
+       	flash[:success] = 'Added successfully.'
       	redirect_to dashboards_path
     else
 		  render 'new'
@@ -35,9 +35,9 @@ class DashboardsController < SecuredController
   def update    
     par = dashboard_params
     par[:user_id] = current_user.id
-    @dashboaedr = Dashboard.find(params[:id])
-    if @dashboaedr.update_attributes(par)
-      flash[:success] = "Updated"
+    @dashboard = Dashboard.find(params[:id])
+    if @dashboard.update_attributes(par)
+      flash[:success] = 'Updated'
       redirect_to dashboards_path
     else
       render 'edit'
@@ -50,7 +50,7 @@ class DashboardsController < SecuredController
     room_id = @dashboard.room_id
     @dashboard.destroy
     send_email_to_next_user(device_id, room_id)
-    flash[:success] = "Deleted."
+    flash[:success] = 'Deleted.'
     redirect_to dashboards_path
   end
 
