@@ -17,3 +17,4 @@
 .env
 # Ignore application configuration
 /config/application.yml
+*.fuse_hidden00008bd700000004

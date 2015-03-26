@@ -86,4 +86,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   Rails.application.routes.default_url_options[:host] = 'domain.com'
+
+  config.action_mailer.smtp_settings = {
+      port:       587,
+      address:    "smtp.mandrillapp.com",
+      domain:      "domain.com",
+      enable_starttls_auto: true,
+      user_name:  'romankovalyuk@perfectial.com',
+      password:   'LydfUja1tMNLaP_TL2mnEA'
+  }
 end

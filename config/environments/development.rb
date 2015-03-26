@@ -39,4 +39,25 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     :user_name => '32289eb96f2a8e7d4',
+  #     :password => 'dec3f86ea050fa',
+  #     :address => 'mailtrap.io',
+  #     :domain => 'mailtrap.io',
+  #     :port => '2525',
+  #     :authentication => :cram_md5
+  # }
+
+  config.action_mailer.smtp_settings = {
+      port:       587,
+      address:    "smtp.mandrillapp.com",
+      domain:      "domain.com",
+      enable_starttls_auto: true,
+      user_name:  'romankovalyuk@perfectial.com',
+      password:   'LydfUja1tMNLaP_TL2mnEA'
+  }
+
 end

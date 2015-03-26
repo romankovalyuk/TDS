@@ -29,5 +29,9 @@ class Auth0Controller < ApplicationController
 
   def failure
     @error_msg = request.params['message']
+    @error_description = request.params['error_description']
+
+    p 'erererererere'
+    p @error_description
   end
 end

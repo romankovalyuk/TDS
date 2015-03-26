@@ -28,5 +28,13 @@ module TDS
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    OmniAuth.config.on_failure = Proc.new { |env|
+      message_key = env['omniauth.error.type']
+      error_description = Rack::Utils.escape(env['omniauth.error'].error_reason)
+      p message_key
+      new_path = "#{env['SCRIPT_NAME']}#{OmniAuth.config.path_prefix}/failure?message=#{message_key}&error_description=#{error_description}"
+      Rack::Response.new(['302 Moved'], 302, 'Location' => new_path).finish
+    }
   end
 end
